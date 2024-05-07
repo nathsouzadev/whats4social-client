@@ -1,9 +1,9 @@
 'use client'
 
 const UserPage = () => {
-  const consumerSecret = process.env.TWITTER_API_SECRET!;
-  const consumerKey = process.env.TWITTER_API_KEY!
-  const redirectUri = process.env.REDIRECT_URI!;
+  const consumerSecret = process.env.NEXT_PUBLIC_TWITTER_API_SECRET!;
+  const consumerKey = process.env.NEXT_PUBLIC_TWITTER_API_KEY!
+  const redirectUri = process.env.NEXT_PUBLIC_REDIRECT_URI!;
 
   const authorizationCode = new URLSearchParams(window.location.search).get('code');
 
