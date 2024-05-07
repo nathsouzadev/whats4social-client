@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env: {
-        TWITTER_API_KEY: process.TWITTER_API_KEY,
-        REDIRECT_URI: process.REDIRECT_URI,
-        TWITTER_API_SECRET: process.TWITTER_API_SECRET,
+        TWITTER_API_KEY: process.env.TWITTER_API_KEY,
+        REDIRECT_URI: process.env.REDIRECT_URI,
+        TWITTER_API_SECRET: process.env.TWITTER_API_SECRET,
     }
 };
 
