@@ -4,9 +4,13 @@ export default function Home () {
   const consumerKey = process.env.TWITTER_API_KEY
   const redirectUri = process.env.REDIRECT_URI;
 
-  function redirectToAuthorization () {
-    const authorizationUrl = `https://api.twitter.com/oauth2/authorize?response_type=code&client_id=${consumerKey}&redirect_uri=${redirectUri}`;
-    window.location.href = authorizationUrl;
+  async function redirectToAuthorization () {
+    const authorizationUrl = await fetch(`https://api.twitter.com/oauth2/token?response_type=code&client_id=${consumerKey}&redirect_uri=${redirectUri}`, {
+      method: 'POST',
+    
+    });
+    console.log('authorizationUrl:', authorizationUrl);
+    // window.location.href = authorizationUrl;
   }
 
   console.log('consumerKey:', consumerKey);
