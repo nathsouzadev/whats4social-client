@@ -45,7 +45,7 @@ const UserPage = () => {
   return (
     <div>
       <h1>User Page</h1>
-      <button onClick={handleAuthorizationResponse}>Get token</button>
+      <button onClick={() => handleAuthorizationResponse}>Get token</button>
     </div>
   );
 }

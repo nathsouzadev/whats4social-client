@@ -10,7 +10,7 @@ export default function Home () {
   return (
     <div>
       <p>My twitter app</p>
-      <button onClick={redirectToAuthorization}>
+      <button onClick={() => redirectToAuthorization}>
         Connect to Twitter
       </button>
     </div>
