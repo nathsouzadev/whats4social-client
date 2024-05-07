@@ -1,3 +1,5 @@
+'use client'
+
 export default function Home () {
   const consumerKey = process.env.TWITTER_API_KEY
   const redirectUri = process.env.REDIRECT_URI;
@@ -10,7 +12,7 @@ export default function Home () {
   return (
     <div>
       <p>My twitter app</p>
-      <button onClick={() => redirectToAuthorization}>
+      <button onClick={redirectToAuthorization}>
         Connect to Twitter
       </button>
     </div>

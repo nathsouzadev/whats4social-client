@@ -1,3 +1,5 @@
+'use client'
+
 const UserPage = () => {
   const consumerSecret = process.env.TWITTER_API_SECRET!;
   const consumerKey = process.env.TWITTER_API_KEY!
@@ -45,7 +47,7 @@ const UserPage = () => {
   return (
     <div>
       <h1>User Page</h1>
-      <button onClick={() => handleAuthorizationResponse}>Get token</button>
+      <button onClick={handleAuthorizationResponse}>Get token</button>
     </div>
   );
 }
