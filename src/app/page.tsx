@@ -8,7 +8,7 @@ export default function Home () {
       client_id: process.env.TWITTER_CLIENT_ID as string,
       client_secret: process.env.TWITTER_CLIENT_SECRET as string,
       callback: 'https://whats4social.vercel.app/user',
-      scopes: ['tweet.read', 'users.read', 'tweet.write'],
+      scopes: ['tweet.read', 'users.read', 'tweet.write', 'offline.access'],
     });
     
     const STATE = 'my-state';
