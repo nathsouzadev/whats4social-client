@@ -13,7 +13,7 @@ export default function UserPage() {
       client_id: process.env.TWITTER_CLIENT_ID as string,
       client_secret: process.env.TWITTER_CLIENT_SECRET as string,
       callback: "http://127.0.0.1:3000/user",
-      scopes: ["tweet.read", "users.read"],
+      scopes: ["tweet.read", "tweet.write", "users.read"],
     });
       
     try {
@@ -31,5 +31,4 @@ export default function UserPage() {
     </div>
   );
 }
-
-// 
+ 
