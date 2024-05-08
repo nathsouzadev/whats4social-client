@@ -1,14 +1,13 @@
 'use client'
 
+import { useSearchParams } from 'next/navigation';
 import { auth } from 'twitter-api-sdk';
 
 export default function UserPage () {
-  const authorizationCode = new URLSearchParams(window.location.search).get('code');
-  const authorizationState = new URLSearchParams(window.location.search).get('state');
-  console.log(authorizationCode)
-  console.log(authorizationState)
+  const searchParams = useSearchParams()
+  const code = searchParams.get('code')
 
-  async function exchangeAuthorizationCodeForAccessToken (authorizationCode: any) {
+  async function exchangeAuthorizationCodeForAccessToken () {
     const authClient = new auth.OAuth2User({
       client_id: process.env.TWITTER_CLIENT_ID as string,
       client_secret: process.env.TWITTER_CLIENT_SECRET as string,
@@ -17,7 +16,7 @@ export default function UserPage () {
     });
       
     try {
-      const token = await authClient.requestAccessToken(authorizationCode);
+      const token = await authClient.requestAccessToken(code!);
       console.log(token)
     } catch (error) {
       console.log(error)
