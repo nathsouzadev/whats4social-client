@@ -1,6 +1,6 @@
 'use client'
 
-import Client, { auth } from "twitter-api-sdk";
+import { auth } from "twitter-api-sdk";
 
 export default function Home () {
   async function redirectToAuthorization () {
