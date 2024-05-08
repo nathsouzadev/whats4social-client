@@ -1,6 +1,7 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import { auth } from 'twitter-api-sdk';
 
 export default function UserPage () {
@@ -24,10 +25,12 @@ export default function UserPage () {
   }
     
   return (
-    <div>
-      <h1>User Page</h1>
-      <button onClick={exchangeAuthorizationCodeForAccessToken}>Get token</button>
-    </div>
+    <Suspense>
+      <div>
+        <h1>User Page</h1>
+        <button onClick={exchangeAuthorizationCodeForAccessToken}>Get token</button>
+      </div>
+    </Suspense>
   );
 }
  
