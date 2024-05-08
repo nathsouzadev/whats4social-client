@@ -7,6 +7,8 @@ const GetToken = () => {
 
   async function exchangeAuthorizationCodeForAccessToken () {
     try {
+      const headers =await  authClient.getAuthHeader()
+      console.log(headers)
       const token = await authClient.requestAccessToken(code!);
       console.log(token)
     } catch (error) {
