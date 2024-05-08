@@ -15,6 +15,7 @@ const GetToken = () => {
       
     try {
       const token = await authClient.requestAccessToken(code!);
+      console.log(token)
     } catch (error) {
       console.log(error)
     }
