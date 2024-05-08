@@ -1,22 +1,22 @@
 'use client'
 
-import { auth } from "twitter-api-sdk";
+import { auth } from 'twitter-api-sdk';
 
 export default function Home () {
   async function redirectToAuthorization () {
     const authClient = new auth.OAuth2User({
       client_id: process.env.TWITTER_CLIENT_ID as string,
       client_secret: process.env.TWITTER_CLIENT_SECRET as string,
-      callback: "https://whats4social.vercel.app/user",
-      scopes: ["tweet.read", "users.read", "tweet.write"],
+      callback: 'https://whats4social.vercel.app/user',
+      scopes: ['tweet.read', 'users.read', 'tweet.write'],
     });
     
-    const STATE = "my-state";
+    const STATE = 'my-state';
 
     const authUrl = authClient.generateAuthURL({
       state: STATE,
-      code_challenge_method: "plain",
-      code_challenge: "test",
+      code_challenge_method: 'plain',
+      code_challenge: 'test',
     });
 
     console.log(authUrl)
